@@ -318,7 +318,7 @@ $class = $settings['class'] ? ' class="' . $settings['class'] . '"' : '';
 	
         <?php
 		// FIRST BOX PRINTED | SECOND TITLE, SECOND MEDIA, SECOND CONTENT
-		 if (($item['second_title'] && $settings['second_title']) || ($item['second_content'] && $settings['second_content'])) : ?>
+		 if (($item['second_title'] && $settings['second_title']) || ($item['second_content'] && $settings['second_content']) || $item['second_media'] ) : ?>
         <div class="<?php echo $text_width; ?><?php if ($align_flip) echo ' {wk}-float-right {wk}-flex-order-last-' . $settings['breakpoint']; ?><?php if ($settings['animation_content'] != 'none') echo ' {wk}-invisible'; ?>" <?php echo $animation_content; ?>>
             <div class="<?php echo $panel; ?> {wk}-width-1-1">
 
@@ -350,7 +350,7 @@ $class = $settings['class'] ? ' class="' . $settings['class'] . '"' : '';
 				
 				<?php
 				# ADDING SECOND MEDIA IF EXIST
-				if ($item['media'] && $settings['media']) : ?>
+				if ($item['second_media'] && $settings['second_media']) : ?>
 				<div class="<?php echo $item_media_width; ?> {wk}-text-center<?php if ($settings['animation_media'] != 'none') echo ' {wk}-invisible'; ?>" <?php echo $animation_media; ?>>
 				<?php echo $second_media; ?>
 				</div>
