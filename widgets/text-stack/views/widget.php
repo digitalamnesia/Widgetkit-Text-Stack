@@ -372,7 +372,7 @@ $class = $settings['class'] ? ' class="' . $settings['class'] . '"' : '';
 		
         <?php 
 		// SECOND BOX PRINTED | FIRST TITLE, FIRST MEDIA, FIRST CONTENT
-		if (($item['title'] && $settings['title']) || ($item['content'] && $settings['content'])) : ?>
+		if (($item['title'] && $settings['title']) || ($item['content'] && $settings['content']) || $item['media']) : ?>
         <div class="<?php echo $item_content_width; ?><?php if ($settings['animation_content'] != 'none') echo ' {wk}-invisible'; ?>" <?php echo $animation_content; ?>>
             <div class="<?php echo $panel; ?> {wk}-width-1-1">
 
