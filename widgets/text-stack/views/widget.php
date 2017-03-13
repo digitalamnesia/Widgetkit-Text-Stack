@@ -185,7 +185,7 @@ $class = $settings['class'] ? ' class="' . $settings['class'] . '"' : '';
         $width  = $item['media.width'];
         $height = $item['media.height'];
 
-        if ($item->type('media') == 'image') {
+        if ($item->type('media') == 'image' || $item->type('second_media') == 'image') {
             $attrs['alt'] = strip_tags($item['title']);
 
             $attrs['class'] .= ($border) ? $border : '';
@@ -208,7 +208,7 @@ $class = $settings['class'] ? ' class="' . $settings['class'] . '"' : '';
         $attrs['height'] = ($height) ? $height : '';
 		
 		#DEFINE FIRST AND SECOND MEDIA ITEM
-        if (($item->type('media') == 'image') && ($settings['image_width'] != 'auto' || $settings['image_height'] != 'auto')) {
+        if (($item->type('media') == 'image') || $item->type('second_media') == 'image' && ($settings['image_width'] != 'auto' || $settings['image_height'] != 'auto')) {
             $media = $item->thumbnail('media', $width, $height, $attrs);
 			$second_media = $item->thumbnail('second_media', $width, $height, $attrs);
         } else {
